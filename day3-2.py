@@ -3,18 +3,13 @@ import re
 file = 'day3-1.txt'
 
 def parse_input() -> str:
-    memory = ''
     with open(file) as text:
-        for line in text:
-            memory += line
-            print(f'{memory = }')
-    return memory
+        return text.read()
 
 def parse_memory(memory: str) -> int:
     total = 0
     instructions = re.findall("mul\(\d{1,4},\d{1,4}\)|do\(\)|don't\(\)", memory)
     print(instructions)
-
     do = True
     for instruction in instructions:
         if instruction == "don't()":

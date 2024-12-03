@@ -3,12 +3,8 @@ import re
 file = 'day3-1.txt'
 
 def parse_input() -> str:
-    memory = ''
     with open(file) as text:
-        for line in text:
-            memory += line
-            print(f'{memory = }')
-    return memory
+        return text.read()
 
 def parse_memory(memory: str) -> int:
     total = 0
